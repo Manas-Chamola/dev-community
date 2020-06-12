@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://manas:manas@devpost-easwo.mongodb.net/DevPost?retryWrites=true&w=majority"
+}
