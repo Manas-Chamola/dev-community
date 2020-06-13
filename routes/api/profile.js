@@ -31,7 +31,6 @@ router.get("/me", auth, async (req, res) => {
 //@route   POST api/profile
 //@desc    Create or update users profile
 //@access  Private
-
 router.post(
   "/",
   [
@@ -109,7 +108,6 @@ router.post(
 //@route   GET api/profile
 //@desc    Get all profile
 //@access  Public
-
 router.get("/", async (req, res) => {
   try {
     const profile = await Profile.find().populate("user", ["name", "avatar"]);
@@ -123,7 +121,6 @@ router.get("/", async (req, res) => {
 //@route   GET api/profile/user/:user_id
 //@desc    Get profile by user ID
 //@access  Public
-
 router.get("/user/:user_id", async (req, res) => {
   try {
     const profile = await Profile.findOne({
@@ -145,7 +142,6 @@ router.get("/user/:user_id", async (req, res) => {
 //@route   DELETE api/profile
 //@desc    Delete profile, user & posts
 //@access  Private
-
 router.delete("/", auth, async (req, res) => {
   try {
     //@todo - remove user posts
