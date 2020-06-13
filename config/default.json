@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://manas:manas@devpost-easwo.mongodb.net/DevPost?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "858070ed2148d0debe8d",
+  "githubSecret": "3dc33eebdb50a99463f7bbc0e8bab1cb7104c5d5"
 }
