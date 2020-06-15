@@ -7,6 +7,7 @@ const { check, validationResult } = require("express-validator");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
+const Post = require("../../models/Post");
 
 //@route   GET api/profile
 //@desc    Get current users profile
@@ -34,8 +35,11 @@ router.get("/me", auth, async (req, res) => {
 router.post(
   "/",
   [
-    check("status", "Status is required").not().isEmpty(),
-    check("skills", "Skills is required").not().isEmpty(),
+    auth,
+    [
+      check("status", "Status is required").not().isEmpty(),
+      check("skills", "Skills is required").not().isEmpty(),
+    ],
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -80,7 +84,7 @@ router.post(
     if (instagram) profileFields.social.instagram = instagram;
 
     try {
-      let profile = Profile.findOne({ user: req.user.id });
+      let profile = await Profile.findOne({ user: req.user.id });
 
       if (profile) {
         //Update
@@ -96,7 +100,7 @@ router.post(
       //Create
       profile = new Profile(profileFields);
 
-      await Profile.save();
+      await profile.save();
       res.json(profile);
     } catch (err) {
       console.log(err.message);
@@ -145,6 +149,7 @@ router.get("/user/:user_id", async (req, res) => {
 router.delete("/", auth, async (req, res) => {
   try {
     //@todo - remove user posts
+    await Post.deleteMany({ user: req.user.id });
     //Remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
 
