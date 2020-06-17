@@ -7,7 +7,7 @@ const ProfileTop = ({
     company,
     location,
     website,
-    socail,
+    social,
     user: { name, avatar },
   },
 }) => {
@@ -25,29 +25,29 @@ const ProfileTop = ({
             <i className="fas fa-globe fa-2x"></i>
           </a>
         )}
-        {socail && socail.twitter && (
-          <a href={socail.twitter} target="_blank" rel="noopener noreferrer">
+        {social && social.twitter && (
+          <a href={social.twitter} target="_blank" rel="noopener noreferrer">
             <i className="fab fa-twitter fa-2x"></i>
           </a>
         )}
-        {socail && socail.facebook && (
-          <a href={socail.facebook} target="_blank" rel="noopener noreferrer">
+        {social && social.facebook && (
+          <a href={social.facebook} target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook fa-2x"></i>
           </a>
         )}
 
-        {socail && socail.linkedin && (
-          <a href={socail.linkedin} target="_blank" rel="noopener noreferrer">
+        {social && social.linkedin && (
+          <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin fa-2x"></i>
           </a>
         )}
-        {socail && socail.youtube && (
-          <a href={socail.youtube} target="_blank" rel="noopener noreferrer">
+        {social && social.youtube && (
+          <a href={social.youtube} target="_blank" rel="noopener noreferrer">
             <i className="fab fa-youtube fa-2x"></i>
           </a>
         )}
-        {socail && socail.instagram && (
-          <a href={socail.instagram} target="_blank" rel="noopener noreferrer">
+        {social && social.instagram && (
+          <a href={social.instagram} target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram fa-2x"></i>
           </a>
         )}
