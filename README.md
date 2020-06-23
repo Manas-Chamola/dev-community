@@ -49,7 +49,7 @@ Create a new MongoDB Cloud Database
 ### 3.
 Go to your Github profile. Under Settings, go to OAuth Apps and create a new OAuth App. You will get a githubClientId and githubSecret
 
-## 4.
+### 4.
 Go to the config folder and open the production.json and put your MongoDB instance URI and the githubClientId and githubSecret
 
 ### 5.
